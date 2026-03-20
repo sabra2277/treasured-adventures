@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasured Adventures — Multigenerational Family Journeys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EF;
+    --warm-white: #FFFCF7;
+    --sand: #E8DDD0;
+    --tan: #C9B99E;
+    --terracotta: #C4714A;
+    --terracotta-light: #D9896A;
+    --terracotta-dark: #A05435;
+    --forest: #3D5A3E;
+    --forest-light: #527A53;
+    --forest-pale: #EBF0EB;
+    --gold: #C8973A;
+    --gold-light: #DEB869;
+    --ink: #2A2219;
+    --ink-mid: #4A3F32;
+    --ink-soft: #7A6E62;
+    --ink-muted: #A89E94;
+    --border: rgba(42,34,25,0.1);
+    --border-mid: rgba(42,34,25,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5vw;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250,246,239,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+  }
+
+  .nav-logo-text span {
+    display: block;
+    font-size: 0.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta) !important;
+    color: var(--cream) !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 2px !important;
+    letter-spacing: 0.1em !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--terracotta-dark) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* Painterly landscape SVG background */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-text { padding-top: 2rem; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--terracotta);
+    opacity: 0.6;
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: var(--cream);
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+
+  .btn-primary:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink-mid);
+    padding: 0.875rem 2rem;
+    border: 1px solid var(--border-mid);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+    transform: translateY(-1px);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Generation stack illustration */
+  .gen-stack {
+    position: relative;
+    width: 380px;
+    height: 460px;
+  }
+
+  .gen-card {
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid var(--warm-white);
+    box-shadow: 0 12px 40px rgba(42,34,25,0.15);
+  }
+
+  .gen-card-1 {
+    width: 220px;
+    height: 280px;
+    top: 20px;
+    left: 30px;
+    transform: rotate(-4deg);
+    background: #C4714A;
+    animation: float1 6s ease-in-out infinite;
+  }
+
+  .gen-card-2 {
+    width: 200px;
+    height: 255px;
+    top: 80px;
+    right: 20px;
+    transform: rotate(3deg);
+    background: #3D5A3E;
+    animation: float2 7s ease-in-out infinite 1s;
+  }
+
+  .gen-card-3 {
+    width: 260px;
+    height: 200px;
+    bottom: 10px;
+    left: 40px;
+    transform: rotate(-1.5deg);
+    background: #C8973A;
+    animation: float3 8s ease-in-out infinite 0.5s;
+  }
+
+  @keyframes float1 { 0%,100%{transform:rotate(-4deg) translateY(0)} 50%{transform:rotate(-4deg) translateY(-8px)} }
+  @keyframes float2 { 0%,100%{transform:rotate(3deg) translateY(0)} 50%{transform:rotate(3deg) translateY(-6px)} }
+  @keyframes float3 { 0%,100%{transform:rotate(-1.5deg) translateY(0)} 50%{transform:rotate(-1.5deg) translateY(-5px)} }
+
+  .gen-card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .gen-label {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .gen-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  .gen-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink-muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: bounce 2.5s ease-in-out infinite;
+    z-index: 3;
+  }
+
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ─── SECTION SHARED ─── */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .section-sub {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    max-width: 540px;
+  }
+
+  /* ─── MANIFESTO BAND ─── */
+  .manifesto {
+    background: var(--forest);
+    padding: 5rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .manifesto::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.012) 80px,
+      rgba(255,255,255,0.012) 81px
+    );
+  }
+
+  .manifesto .section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .manifesto-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(250,246,239,0.95);
+    line-height: 1.4;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .manifesto-quote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    width: 2px;
+    background: var(--gold);
+  }
+
+  .manifesto-right { color: rgba(250,246,239,0.75); }
+
+  .manifesto-right p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .manifesto-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .stat-item {
+    padding: 1.25rem;
+    border: 1px solid rgba(250,246,239,0.12);
+    border-radius: 2px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .stat-desc {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.5);
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  /* ─── EXPERIENCES ─── */
+  .experiences {
+    padding: 7rem 0;
+    background: var(--warm-white);
+  }
+
+  .experiences .section-inner > .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+  }
+
+  .exp-card {
+    background: var(--warm-white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s;
+    cursor: pointer;
+  }
+
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--terracotta);
+    transform: scaleX(0);
+    transition: transform 0.35s;
+    transform-origin: left;
+  }
+
+  .exp-card:hover::before { transform: scaleX(1); }
+
+  .exp-card:hover { background: var(--cream); }
+
+  .exp-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  .exp-icon-wrap.terracotta { background: rgba(196,113,74,0.12); }
+  .exp-icon-wrap.forest { background: rgba(61,90,62,0.12); }
+  .exp-icon-wrap.gold { background: rgba(200,151,58,0.12); }
+
+  .exp-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .exp-tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    border: 1px solid rgba(196,113,74,0.3);
+    padding: 0.25rem 0.6rem;
+    border-radius: 1px;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how {
+    padding: 7rem 0;
+    background: var(--cream);
+  }
+
+  .how .section-inner { text-align: center; margin-bottom: 4rem; }
+
+  .how-steps {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    padding: 0 5vw;
+  }
+
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: calc(5vw + 80px);
+    right: calc(5vw + 80px);
+    height: 1px;
+    background: var(--border-mid);
+    z-index: 0;
+  }
+
+  .how-step {
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--warm-white);
+    border: 1px solid var(--border-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--terracotta);
+    transition: all 0.3s;
+  }
+
+  .how-step:hover .step-num {
+    background: var(--terracotta);
+    color: var(--cream);
+    border-color: var(--terracotta);
+    transform: scale(1.08);
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+
+  /* ─── GENERATIONS ─── */
+  .generations {
+    padding: 7rem 0;
+    background: var(--warm-white);
+  }
+
+  .gen-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .gen-tile {
+    border-radius: 3px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .gen-tile:hover { transform: translateY(-4px); }
+
+  .gen-tile-grandparents { background: var(--forest); }
+  .gen-tile-parents { background: var(--terracotta); }
+  .gen-tile-kids { background: var(--gold); }
+  .gen-tile-teens { background: var(--ink-mid); }
+
+  .gen-tile-emoji {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .gen-tile h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(250,246,239,0.95);
+    margin-bottom: 0.75rem;
+  }
+
+  .gen-tile p {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: rgba(250,246,239,0.7);
+    margin-bottom: 1rem;
+  }
+
+  .gen-tile-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .gen-tile-list li {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.15);
+    color: rgba(250,246,239,0.85);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1px;
+  }
+
+  /* ─── DESTINATIONS ─── */
+  .destinations {
+    padding: 7rem 0;
+    background: var(--cream);
+  }
+
+  .dest-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+
+  .dest-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+
+  .dest-scroll::-webkit-scrollbar { display: none; }
+
+  .dest-card {
+    flex: 0 0 320px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.35s;
+  }
+
+  .dest-card:hover { transform: translateY(-6px); }
+
+  .dest-card-art {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dest-card-body {
+    background: var(--warm-white);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+
+  .dest-region {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.35rem;
+  }
+
+  .dest-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .dest-tagline {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .dest-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+  }
+
+  .dest-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* ─── MEMORY MAKERS ─── */
+  .memory {
+    padding: 7rem 0;
+    background: var(--forest);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .memory-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .memory-left .section-label { color: var(--gold-light); }
+  .memory-left .section-label::after { background: var(--gold-light); }
+
+  .memory-left .section-title {
+    color: rgba(250,246,239,0.95);
+    margin-bottom: 1.5rem;
+  }
+
+  .memory-left .section-title em { color: var(--gold-light); }
+
+  .memory-left p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(250,246,239,0.65);
+    margin-bottom: 2rem;
+  }
+
+  .memory-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .memory-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(250,246,239,0.06);
+    border: 1px solid rgba(250,246,239,0.1);
+    border-radius: 2px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .memory-item:hover {
+    background: rgba(250,246,239,0.1);
+    border-color: rgba(200,151,58,0.4);
+    transform: translateX(4px);
+  }
+
+  .memory-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(200,151,58,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .memory-item-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(250,246,239,0.9);
+    margin-bottom: 0.25rem;
+  }
+
+  .memory-item-text p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: rgba(250,246,239,0.5);
+    margin: 0;
+  }
+
+  /* Scrapbook visual */
+  .scrapbook {
+    position: relative;
+    width: 100%;
+    height: 480px;
+  }
+
+  .scrap {
+    position: absolute;
+    border-radius: 2px;
+    border: 3px solid rgba(250,246,239,0.9);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .scrap-photo {
+    width: 180px;
+    height: 140px;
+    top: 20px;
+    left: 10px;
+    transform: rotate(-5deg);
+    animation: scrap1 7s ease-in-out infinite;
+  }
+
+  .scrap-photo-2 {
+    width: 160px;
+    height: 200px;
+    top: 0;
+    right: 30px;
+    transform: rotate(4deg);
+    animation: scrap2 9s ease-in-out infinite 1s;
+  }
+
+  .scrap-photo-3 {
+    width: 200px;
+    height: 150px;
+    bottom: 60px;
+    left: 50px;
+    transform: rotate(2deg);
+    animation: scrap3 8s ease-in-out infinite 0.5s;
+  }
+
+  .scrap-note {
+    width: 140px;
+    height: 120px;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-3deg);
+    background: #FAEEDA;
+    padding: 0.75rem;
+    border: 3px solid rgba(250,246,239,0.6) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: scrap1 10s ease-in-out infinite 2s;
+  }
+
+  @keyframes scrap1 { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(-5deg) translateY(-6px)} }
+  @keyframes scrap2 { 0%,100%{transform:rotate(4deg)} 50%{transform:rotate(4deg) translateY(-8px)} }
+  @keyframes scrap3 { 0%,100%{transform:rotate(2deg)} 50%{transform:rotate(2deg) translateY(-5px)} }
+
+  .scrap-note-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    padding: 7rem 0;
+    background: var(--warm-white);
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .test-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    position: relative;
+    background: var(--cream);
+    transition: all 0.3s;
+  }
+
+  .test-card:hover {
+    border-color: var(--tan);
+    transform: translateY(-3px);
+  }
+
+  .test-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--terracotta);
+    opacity: 0.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .test-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .test-family {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .test-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .test-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .test-trip {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+  }
+
+  /* ─── CTA BAND ─── */
+  .cta-band {
+    padding: 7rem 0;
+    background: var(--terracotta);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.04) 60px,
+      rgba(255,255,255,0.04) 61px
+    );
+  }
+
+  .cta-band .section-inner { position: relative; z-index: 1; }
+
+  .cta-band h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .cta-band h2 em {
+    font-style: italic;
+    color: rgba(250,246,239,0.75);
+  }
+
+  .cta-band p {
+    font-size: 0.95rem;
+    color: rgba(250,246,239,0.75);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+
+  .btn-white {
+    background: var(--cream);
+    color: var(--terracotta);
+    padding: 0.875rem 2.5rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+
+  .btn-white:hover {
+    background: var(--warm-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    padding: 5rem 0 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(250,246,239,0.08);
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand .nav-logo-text {
+    color: rgba(250,246,239,0.9);
+    font-size: 1.4rem;
+  }
+
+  .footer-brand .nav-logo-text span {
+    color: rgba(250,246,239,0.4);
+  }
+
+  .footer-tagline {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(250,246,239,0.45);
+    margin: 1rem 0 1.5rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(250,246,239,0.08);
+    border: 1px solid rgba(250,246,239,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: rgba(250,246,239,0.5);
+    font-size: 0.75rem;
+  }
+
+  .social-btn:hover {
+    background: rgba(250,246,239,0.15);
+    color: rgba(250,246,239,0.9);
+  }
+
+  .footer-col h4 {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.5);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.82rem;
+    color: rgba(250,246,239,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: rgba(250,246,239,0.85); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(250,246,239,0.25);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.72rem;
+    color: rgba(250,246,239,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: rgba(250,246,239,0.6); }
+
+  /* ─── REVEAL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .manifesto .section-inner { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .gen-grid { grid-template-columns: repeat(2,1fr); }
+    .how-steps { grid-template-columns: repeat(2,1fr); }
+    .how-steps::before { display: none; }
+    .test-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .memory-inner { grid-template-columns: 1fr; }
+    .scrapbook { display: none; }
+    .dest-header { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" stroke="#C4714A" stroke-width="1.2"/>
+      <path d="M10 22 C10 14, 14 10, 18 10 C22 10, 26 14, 26 22" stroke="#C4714A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M13 22 L18 14 L23 22" stroke="#3D5A3E" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="18" cy="24" r="2" fill="#C8973A"/>
+      <path d="M14 26 L22 26" stroke="#C4714A" stroke-width="0.8" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      Treasured Adventures
+      <span>Multigenerational Journeys</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#experiences">Experiences</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#memories">Memory Makers</a></li>
+    <li><a href="#" class="nav-cta">Plan a Journey</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text reveal">
+      <div class="hero-eyebrow">Multigenerational Family Travel</div>
+      <h1 class="hero-h1">
+        Where Families
+        <em>Come Together</em>
+        Across Every Generation
+      </h1>
+      <p class="hero-sub">
+        Curated adventures designed for grandparents, parents, teenagers, and toddlers alike — with games, traditions, shared meals, and moments that become the stories you tell forever.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Explore Journeys</a>
+        <a href="#" class="btn-ghost">How It Works</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" style="transition-delay: 0.2s;">
+      <div class="gen-stack">
+        <div class="gen-card gen-card-1">
+          <div class="gen-card-inner">
+            <span class="gen-label">The Foundation</span>
+            <div class="gen-icon">👴👵</div>
+            <div class="gen-title">Grandparents' Wisdom Tour</div>
+          </div>
+        </div>
+        <div class="gen-card gen-card-2">
+          <div class="gen-card-inner">
+            <span class="gen-label">The Bridge</span>
+            <div class="gen-icon">🏕️</div>
+            <div class="gen-title">Family Adventure Week</div>
+          </div>
+        </div>
+        <div class="gen-card gen-card-3">
+          <div class="gen-card-inner">
+            <span class="gen-label">The Future</span>
+            <div class="gen-icon">🌟✨</div>
+            <div class="gen-title">Kids' Discovery Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Scroll to Explore
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="about">
+  <div class="section-inner">
+    <div class="manifesto-quote reveal">
+      "The most treasured souvenirs aren't what you buy — they're the moments when three generations share a laugh, a meal, or a view that takes everyone's breath away."
+    </div>
+    <div class="manifesto-right reveal" style="transition-delay: 0.15s;">
+      <p>
+        Treasured Adventures was born from a simple belief: that the most powerful travel experiences happen when families of all ages journey together, not just side by side, but fully engaged — with each other and the world around them.
+      </p>
+      <p>
+        We design every detail with multi-generational dynamics in mind. From accessible excursions that grandparents can enjoy, to secret game kits that keep the kids off their screens, to evening reflection rituals that become your family's own traditions.
+      </p>
+      <div class="manifesto-stats">
+        <div class="stat-item">
+          <span class="stat-num">340+</span>
+          <span class="stat-desc">Family Journeys</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-desc">Generations Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">98%</span>
+          <span class="stat-desc">Would Return</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences" id="experiences">
+  <div class="section-inner">
+    <div class="header reveal">
+      <div>
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Every Experience <em>Thoughtfully</em> Designed</h2>
+      </div>
+      <p class="section-sub">No two families are the same, which is why our adventures are fully curated around who you are — and who you want to become together.</p>
+    </div>
+
+    <div class="exp-grid reveal" style="transition-delay: 0.15s;">
+      <div class="exp-card">
+        <div class="exp-icon-wrap terracotta">🎲</div>
+        <h3>Family Game Kits</h3>
+        <p>Custom-designed travel games for the road, the resort, and the dinner table. Tailored to your ages, from toddlers to grandparents — everyone plays.</p>
+        <span class="exp-tag">Ages 2–92</span>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon-wrap forest">📖</div>
+        <h3>Scrapbook & Memory Kit</h3>
+        <p>A curated keepsake kit that travels with you — prompts, materials, and moments. Every member of the family contributes, creating a heirloom you'll pass down.</p>
+        <span class="exp-tag">Analog Keepsakes</span>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon-wrap gold">🥾</div>
+        <h3>Curated Excursions</h3>
+        <p>Activities chosen for accessibility and joy across every generation — gentle nature walks with wildlife, cooking classes that teach family recipes, guided heritage tours.</p>
+        <span class="exp-tag">All Abilities</span>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon-wrap terracotta">🍽️</div>
+        <h3>Shared Table Rituals</h3>
+        <p>Curated dining experiences built around family storytelling. Each meal comes with conversation starters and a challenge — who can share the oldest family memory?</p>
+        <span class="exp-tag">Bonding by Design</span>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon-wrap forest">⭐</div>
+        <h3>Starlight Traditions</h3>
+        <p>Evening rituals that become your family's own — campfire stories, gratitude circles, stargazing guides, and letter-writing to your future selves.</p>
+        <span class="exp-tag">Nightly Ritual</span>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon-wrap gold">🧭</div>
+        <h3>Adventure Concierge</h3>
+        <p>A dedicated family experience guide who understands your family's dynamics, mobility needs, interests, and ensures every moment lands for everyone.</p>
+        <span class="exp-tag">White Glove</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-inner reveal">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">Your <em>Journey</em> Begins Here</h2>
+  </div>
+  <div class="how-steps reveal" style="transition-delay: 0.15s;">
+    <div class="how-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Tell Your Story</div>
+      <p class="step-desc">Share who's coming — ages, abilities, interests, and the stories you want to create together.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Curated Design</div>
+      <p class="step-desc">Our team crafts a personalized journey — destination, pace, activities, and experience kits chosen for your family's DNA.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Journey Together</div>
+      <p class="step-desc">Every detail is handled. You focus only on each other — fully present, fully connected, across every generation.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Treasure Forever</div>
+      <p class="step-desc">Your custom scrapbook, photos, and keepsakes arrive home before you do. The memories never stop growing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GENERATIONS -->
+<section class="generations" id="generations">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Designed For All</div>
+      <h2 class="section-title">Something for <em>Every</em> Generation</h2>
+      <p class="section-sub">We don't design trips where some family members are bored, left behind, or overwhelmed. Every generation has their moment to shine.</p>
+    </div>
+    <div class="gen-grid reveal" style="transition-delay: 0.15s;">
+      <div class="gen-tile gen-tile-grandparents">
+        <span class="gen-tile-emoji">👴👵</span>
+        <h3>Grandparents</h3>
+        <p>Accessible adventures, comfortable pacing, and moments where their wisdom becomes the highlight of the trip.</p>
+        <ul class="gen-tile-list">
+          <li>Leisurely Pace</li>
+          <li>Storytelling Hours</li>
+          <li>Comfort-First</li>
+          <li>Heritage Walks</li>
+        </ul>
+      </div>
+      <div class="gen-tile gen-tile-parents">
+        <span class="gen-tile-emoji">👨‍👩‍👧</span>
+        <h3>Parents</h3>
+        <p>Finally, a trip where you're not managing logistics — just making memories. We handle everything else.</p>
+        <ul class="gen-tile-list">
+          <li>Stress-Free</li>
+          <li>Adult Moments</li>
+          <li>Guided Excursions</li>
+          <li>Wine & Dine</li>
+        </ul>
+      </div>
+      <div class="gen-tile gen-tile-kids">
+        <span class="gen-tile-emoji">🧒🧒</span>
+        <h3>Little Ones</h3>
+        <p>Enchanting activities, treasure hunts, craft kits, and wonder-filled moments built just for curious young minds.</p>
+        <ul class="gen-tile-list">
+          <li>Treasure Hunts</li>
+          <li>Nature Discovery</li>
+          <li>Craft Kits</li>
+          <li>Story Time</li>
+        </ul>
+      </div>
+      <div class="gen-tile gen-tile-teens">
+        <span class="gen-tile-emoji">🧑‍🤝‍🧑</span>
+        <h3>Teenagers</h3>
+        <p>Adventure, independence, and experiences that make them put down the phone and look up — genuinely engaged.</p>
+        <ul class="gen-tile-list">
+          <li>Real Adventure</li>
+          <li>Photography Walks</li>
+          <li>Service Projects</li>
+          <li>Tech Breaks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+  <div class="section-inner">
+    <div class="dest-header reveal">
+      <div>
+        <div class="section-label">Featured Journeys</div>
+        <h2 class="section-title">Where Will Your <em>Family Story</em> Unfold?</h2>
+      </div>
+      <a href="#" class="btn-ghost" style="white-space:nowrap">View All Destinations</a>
+    </div>
+
+    <div class="dest-scroll reveal" style="transition-delay: 0.1s;">
+      <!-- Card 1 -->
+      <div class="dest-card">
+        <div class="dest-card-art">
+          <svg width="100%" height="260" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="260" fill="#C4714A"/>
+            <rect y="160" width="320" height="100" fill="#A05435"/>
+            <ellipse cx="160" cy="160" rx="200" ry="60" fill="#B06040"/>
+            <!-- Sky shapes -->
+            <circle cx="60" cy="60" r="30" fill="#D4845A" opacity="0.5"/>
+            <circle cx="160" cy="40" r="45" fill="#D9896A" opacity="0.4"/>
+            <circle cx="260" cy="70" r="35" fill="#D4845A" opacity="0.5"/>
+            <!-- Saguaro cacti -->
+            <rect x="55" y="100" width="10" height="70" rx="5" fill="#8B4030"/>
+            <rect x="35" y="120" width="8" height="30" rx="4" fill="#8B4030"/>
+            <rect x="73" y="115" width="8" height="30" rx="4" fill="#8B4030"/>
+            <rect x="200" y="110" width="12" height="60" rx="6" fill="#8B4030"/>
+            <rect x="180" y="130" width="8" height="25" rx="4" fill="#8B4030"/>
+            <rect x="218" y="125" width="8" height="25" rx="4" fill="#8B4030"/>
+            <!-- Mesa shape -->
+            <polygon points="100,140 220,140 240,160 80,160" fill="#994030"/>
+            <!-- Stars -->
+            <circle cx="40" cy="20" r="1.5" fill="rgba(255,255,255,0.8)"/>
+            <circle cx="100" cy="10" r="1" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="180" cy="15" r="2" fill="rgba(255,255,255,0.9)"/>
+            <circle cx="260" cy="25" r="1.5" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="300" cy="10" r="1" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-region">Southwest USA</div>
+          <div class="dest-name">Arizona & Utah</div>
+          <div class="dest-tagline">Red rock stargazing, ancient cliff dwellings, and the world's most spectacular sunsets — shared by every age.</div>
+          <div class="dest-meta">
+            <span>🗓 7–10 Days</span>
+            <span>👥 Ages 5–85</span>
+            <span>🌡 Spring / Fall</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dest-card">
+        <div class="dest-card-art">
+          <svg width="100%" height="260" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="260" fill="#3D5A3E"/>
+            <rect y="180" width="320" height="80" fill="#2A3E2B"/>
+            <!-- Mountains -->
+            <polygon points="0,180 80,60 160,180" fill="#2D4530"/>
+            <polygon points="60,180 160,40 260,180" fill="#344E35"/>
+            <polygon points="140,180 240,80 320,180" fill="#2D4530"/>
+            <!-- Snow caps -->
+            <polygon points="80,60 95,90 65,90" fill="rgba(250,246,239,0.7)"/>
+            <polygon points="160,40 180,80 140,80" fill="rgba(250,246,239,0.8)"/>
+            <polygon points="240,80 255,105 225,105" fill="rgba(250,246,239,0.65)"/>
+            <!-- Forest line -->
+            <rect y="175" width="320" height="15" fill="#1E3320" rx="0"/>
+            <!-- Lake reflection -->
+            <ellipse cx="160" cy="220" rx="100" ry="20" fill="#4A7A6A" opacity="0.6"/>
+            <!-- Sky glow -->
+            <ellipse cx="160" cy="0" rx="180" ry="40" fill="#527A53" opacity="0.4"/>
+            <!-- Stars -->
+            <circle cx="30" cy="20" r="1.5" fill="rgba(255,255,255,0.9)"/>
+            <circle cx="80" cy="8" r="1" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="150" cy="15" r="2" fill="rgba(255,255,255,1)"/>
+            <circle cx="220" cy="5" r="1.5" fill="rgba(255,255,255,0.8)"/>
+            <circle cx="290" cy="18" r="1" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="310" cy="8" r="1.5" fill="rgba(255,255,255,0.7)"/>
+          </svg>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-region">Pacific Northwest</div>
+          <div class="dest-name">Olympic Peninsula</div>
+          <div class="dest-tagline">Ancient rainforests, tide pools teeming with life, and family kayaking through glassy mountain lakes.</div>
+          <div class="dest-meta">
+            <span>🗓 6–9 Days</span>
+            <span>👥 Ages 4–80</span>
+            <span>🌡 Summer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="dest-card">
+        <div class="dest-card-art">
+          <svg width="100%" height="260" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="260" fill="#5B8FA8"/>
+            <rect y="160" width="320" height="100" fill="#3A6A82"/>
+            <!-- Wave shapes -->
+            <path d="M0 160 Q40 140 80 160 Q120 180 160 160 Q200 140 240 160 Q280 180 320 160 L320 260 L0 260Z" fill="#3A6A82"/>
+            <path d="M0 175 Q40 155 80 175 Q120 195 160 175 Q200 155 240 175 Q280 195 320 175 L320 260 L0 260Z" fill="#2D5470" opacity="0.7"/>
+            <!-- Island shapes -->
+            <ellipse cx="100" cy="158" rx="45" ry="14" fill="#C8973A"/>
+            <ellipse cx="220" cy="155" rx="55" ry="16" fill="#C8973A"/>
+            <!-- Palm trees -->
+            <rect x="97" y="115" width="6" height="44" rx="3" fill="#8B6A20"/>
+            <ellipse cx="100" cy="112" rx="18" ry="10" fill="#527A53" opacity="0.9"/>
+            <rect x="217" y="108" width="6" height="48" rx="3" fill="#8B6A20"/>
+            <ellipse cx="220" cy="105" rx="20" ry="11" fill="#527A53" opacity="0.9"/>
+            <!-- Sun/horizon glow -->
+            <ellipse cx="160" cy="60" rx="30" ry="30" fill="#DEB869" opacity="0.35"/>
+            <circle cx="160" cy="60" r="18" fill="#DEB869" opacity="0.5"/>
+            <!-- Reflection line -->
+            <path d="M140 160 L180 160" stroke="#DEB869" stroke-width="2" opacity="0.4"/>
+            <!-- Sailboat -->
+            <polygon points="175,140 195,145 175,145" fill="rgba(250,246,239,0.8)"/>
+            <rect x="174" y="140" width="2" height="8" fill="rgba(250,246,239,0.6)"/>
+          </svg>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-region">Caribbean</div>
+          <div class="dest-name">St. Lucia</div>
+          <div class="dest-tagline">Volcanic peaks, sailing between coves, farm-to-table cooking classes, and unhurried island time for three generations.</div>
+          <div class="dest-meta">
+            <span>🗓 8–12 Days</span>
+            <span>👥 Ages 3–80</span>
+            <span>🌡 Year-Round</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="dest-card">
+        <div class="dest-card-art">
+          <svg width="100%" height="260" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="260" fill="#D4C4A0"/>
+            <rect y="170" width="320" height="90" fill="#C4A870"/>
+            <!-- Tuscan hills -->
+            <ellipse cx="60" cy="175" rx="100" ry="35" fill="#B89A55"/>
+            <ellipse cx="200" cy="180" rx="140" ry="40" fill="#C4AA60"/>
+            <!-- Cypress trees -->
+            <rect x="120" y="110" width="8" height="65" rx="4" fill="#4A6B2A"/>
+            <ellipse cx="124" cy="108" rx="8" ry="25" fill="#4A6B2A"/>
+            <rect x="155" y="120" width="8" height="55" rx="4" fill="#4A6B2A"/>
+            <ellipse cx="159" cy="118" rx="8" ry="22" fill="#4A6B2A"/>
+            <rect x="190" y="105" width="8" height="68" rx="4" fill="#4A6B2A"/>
+            <ellipse cx="194" cy="103" rx="8" ry="26" fill="#4A6B2A"/>
+            <!-- Farmhouse -->
+            <rect x="40" y="130" width="60" height="45" fill="#C4714A" rx="2"/>
+            <polygon points="30,133 110,133 70,105" fill="#994030"/>
+            <rect x="63" y="148" width="14" height="27" fill="#8B4030" rx="1"/>
+            <!-- Vineyards -->
+            <path d="M0 185 Q30 178 60 185 Q90 192 120 185" stroke="#7A9A3A" stroke-width="1.5" fill="none" opacity="0.8"/>
+            <path d="M0 195 Q30 188 60 195 Q90 202 120 195" stroke="#7A9A3A" stroke-width="1.5" fill="none" opacity="0.8"/>
+            <!-- Sky -->
+            <ellipse cx="260" cy="50" rx="40" ry="15" fill="rgba(255,255,255,0.5)"/>
+            <ellipse cx="100" cy="30" rx="55" ry="18" fill="rgba(255,255,255,0.4)"/>
+          </svg>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-region">Tuscany, Italy</div>
+          <div class="dest-name">Val d'Orcia</div>
+          <div class="dest-tagline">Rolling hills, family-run agriturismi, pasta-making lessons across generations, and a pace of life the whole family can breathe into.</div>
+          <div class="dest-meta">
+            <span>🗓 9–14 Days</span>
+            <span>👥 Ages 5–85</span>
+            <span>🌡 Spring / Fall</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORY MAKERS -->
+<section class="memory" id="memories">
+  <div class="memory-inner">
+    <div class="reveal">
+      <div class="section-label">The Keepsakes</div>
+      <h2 class="section-title">We Make the <em>Memories</em>, You Keep Them Forever</h2>
+      <p>Every Treasured Adventures journey includes a curated memory kit — because the best experiences deserve to last well beyond the trip itself.</p>
+      <div class="memory-items">
+        <div class="memory-item">
+          <div class="memory-item-icon">📸</div>
+          <div class="memory-item-text">
+            <h4>Family Photo Book</h4>
+            <p>A curated, professionally designed photo book arrives at your door within 3 weeks of returning home.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <div class="memory-item-icon">✉️</div>
+          <div class="memory-item-text">
+            <h4>Letters to the Future</h4>
+            <p>Each family member writes a letter sealed and sent back to you one year later — a time capsule from the trip.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <div class="memory-item-icon">🎨</div>
+          <div class="memory-item-text">
+            <h4>Custom Scrapbook Kit</h4>
+            <p>Tickets, pressed flowers, sketches, and stories — a tactile family heirloom built together on the journey.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <div class="memory-item-icon">🎙️</div>
+          <div class="memory-item-text">
+            <h4>Oral History Recording</h4>
+            <p>Guided prompts for grandparents to share stories — captured on audio and beautifully transcribed for your family archive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay: 0.2s;">
+      <div class="scrapbook">
+        <div class="scrap scrap-photo" style="background: #C4714A;">
+          <svg width="180" height="140" viewBox="0 0 180 140">
+            <rect width="180" height="140" fill="#C4714A"/>
+            <ellipse cx="90" cy="100" rx="120" ry="50" fill="#A05435"/>
+            <circle cx="60" cy="50" r="25" fill="#D4845A" opacity="0.6"/>
+            <circle cx="130" cy="40" r="30" fill="#D9896A" opacity="0.5"/>
+            <rect x="60" y="70" width="60" height="45" rx="3" fill="#FAF6EF" opacity="0.2"/>
+            <text x="90" y="100" fill="rgba(250,246,239,0.7)" font-size="10" text-anchor="middle" font-family="serif" font-style="italic">Grand Canyon '25</text>
+          </svg>
+        </div>
+        <div class="scrap scrap-photo-2" style="background: #3D5A3E;">
+          <svg width="160" height="200" viewBox="0 0 160 200">
+            <rect width="160" height="200" fill="#3D5A3E"/>
+            <polygon points="0,180 80,60 160,180" fill="#2D4530"/>
+            <polygon points="30,200 110,90 190,200" fill="#344E35" opacity="0.7"/>
+            <circle cx="80" cy="30" r="20" fill="#527A53" opacity="0.5"/>
+            <text x="80" y="190" fill="rgba(250,246,239,0.6)" font-size="9" text-anchor="middle" font-family="serif" font-style="italic">Olympic Peninsula</text>
+          </svg>
+        </div>
+        <div class="scrap scrap-photo-3" style="background: #C8973A;">
+          <svg width="200" height="150" viewBox="0 0 200 150">
+            <rect width="200" height="150" fill="#5B8FA8"/>
+            <rect y="90" width="200" height="60" fill="#3A6A82"/>
+            <ellipse cx="70" cy="88" rx="40" ry="12" fill="#C8973A"/>
+            <ellipse cx="150" cy="85" rx="45" ry="13" fill="#C8973A"/>
+            <rect x="68" y="60" width="5" height="30" rx="2" fill="#8B6A20"/>
+            <ellipse cx="70" cy="58" rx="12" ry="8" fill="#527A53"/>
+            <text x="100" y="138" fill="rgba(250,246,239,0.7)" font-size="9" text-anchor="middle" font-family="serif" font-style="italic">St. Lucia Family Trip</text>
+          </svg>
+        </div>
+        <div class="scrap scrap-note">
+          <p class="scrap-note-text">"Papa told us about fishing with his grandfather here — same river, 60 years later."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Family Stories</div>
+      <h2 class="section-title">What Families <em>Say</em> After They Return</h2>
+    </div>
+    <div class="test-grid reveal" style="transition-delay: 0.1s;">
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <p class="test-text">My father-in-law has Parkinson's and we were worried he couldn't keep up. Treasured Adventures designed the whole trip around him. He was the star of every activity — and he cried at dinner saying it was the best week of his life.</p>
+        <div class="test-family">
+          <div class="test-avatar" style="background: var(--terracotta);">MH</div>
+          <div>
+            <div class="test-name">The Harrison Family</div>
+            <div class="test-trip">Arizona Canyon Journey • 4 Generations</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <p class="test-text">Our teenagers put their phones in the drawer on day two — voluntarily. I have no other way to explain how that happened except that every experience was genuinely exciting for them. The family game kits were a revelation.</p>
+        <div class="test-family">
+          <div class="test-avatar" style="background: var(--forest);">TR</div>
+          <div>
+            <div class="test-name">The Rodriguez Family</div>
+            <div class="test-trip">Tuscany Table Journey • 3 Generations</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote-mark">"</div>
+        <p class="test-text">The oral history recording is the single most precious thing we own. My grandmother is 91. She shared stories that night we never knew existed. My children will share those recordings with their own children someday.</p>
+        <div class="test-family">
+          <div class="test-avatar" style="background: var(--gold);">CL</div>
+          <div>
+            <div class="test-name">The Liang Family</div>
+            <div class="test-trip">Olympic Peninsula • 4 Generations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="section-inner reveal">
+    <h2>
+      Your Family's Greatest Story<br>
+      <em>Hasn't Been Written Yet</em>
+    </h2>
+    <p>
+      Every generation has wisdom to share and wonder to discover. Let us help you bring your whole family together — fully present, fully connected, making memories that last forever.
+    </p>
+    <a href="#" class="btn-white">Start Planning Your Journey</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom: 0.75rem; display: inline-flex;">
+          <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="17" stroke="#C4714A" stroke-width="1.2" opacity="0.6"/>
+            <path d="M10 22 C10 14, 14 10, 18 10 C22 10, 26 14, 26 22" stroke="#C4714A" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+            <path d="M13 22 L18 14 L23 22" stroke="#527A53" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            <circle cx="18" cy="24" r="2" fill="#C8973A" opacity="0.7"/>
+          </svg>
+          <div class="nav-logo-text footer-brand-text">
+            Treasured Adventures
+            <span>Multigenerational Journeys</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Creating the stories families tell for generations — from grandparents to grandchildren, every journey is curated with love, intention, and wonder.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">ig</a>
+          <a href="#" class="social-btn">fb</a>
+          <a href="#" class="social-btn">yt</a>
+          <a href="#" class="social-btn">pi</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Journeys</h4>
+        <ul>
+          <li><a href="#">USA & Canada</a></li>
+          <li><a href="#">Europe</a></li>
+          <li><a href="#">Caribbean</a></li>
+          <li><a href="#">Latin America</a></li>
+          <li><a href="#">Asia Pacific</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Experiences</h4>
+        <ul>
+          <li><a href="#">Game & Activity Kits</a></li>
+          <li><a href="#">Memory & Scrapbook</a></li>
+          <li><a href="#">Oral History</a></li>
+          <li><a href="#">Family Excursions</a></li>
+          <li><a href="#">Starlight Traditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">The Team</a></li>
+          <li><a href="#">Family Blog</a></li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Treasured Adventures. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for reveal animations
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.boxShadow = '0 2px 20px rgba(42,34,25,0.08)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
